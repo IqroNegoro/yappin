@@ -62,6 +62,7 @@ lib/
     room_tile.dart
     message_bubble.dart
     message_input.dart
+    message_popup.dart         # popup pesan baru dari room lain (MessagePopupHost)
     dialogs.dart
 ```
 
