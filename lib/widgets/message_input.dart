@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -58,9 +59,14 @@ class _MessageInputState extends State<MessageInput> {
                 minLines: 1,
                 maxLines: 4,
                 textCapitalization: TextCapitalization.sentences,
+                // Di web langsung siap mengetik saat room dibuka.
+                // Di HP tidak, supaya keyboard tidak tiba-tiba muncul.
+                autofocus: kIsWeb,
                 // Enter = kirim (tanpa ini, field multi-baris memakai Enter untuk baris baru)
                 textInputAction: TextInputAction.send,
-                onSubmitted: (_) => _send(),
+                // Pakai onEditingComplete (bukan onSubmitted) supaya fokus
+                // tetap di kolom input setelah Enter, jadi bisa langsung ngetik lagi.
+                onEditingComplete: _send,
                 decoration: InputDecoration(
                   hintText: 'Tulis pesan…',
                   filled: true,

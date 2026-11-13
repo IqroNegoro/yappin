@@ -69,6 +69,8 @@ class _NamePageState extends State<NamePage> {
                 TextField(
                   controller: _controller,
                   maxLength: 20,
+                  // Pertama kali buka app: langsung siap mengetik nama.
+                  autofocus: widget.initialName == null,
                   textCapitalization: TextCapitalization.words,
                   decoration: const InputDecoration(hintText: 'Nama kamu'),
                   onSubmitted: (_) => _submit(),

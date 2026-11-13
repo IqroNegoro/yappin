@@ -7,6 +7,10 @@ class Session {
   static String userId = '';
   static String userName = '';
 
+  /// Id room yang sedang dibuka (null = sedang tidak di halaman chat).
+  /// Dipakai popup pesan baru supaya tidak muncul untuk room yang sedang dibuka.
+  static String? openRoomId;
+
   /// Baca nama & id tersimpan. Return nama (atau null kalau belum pernah isi).
   static Future<String?> loadSavedName() async {
     final prefs = await SharedPreferences.getInstance();
