@@ -7,5 +7,3 @@ Branch ini (`app`) berisi aplikasi **lengkap**. Starter untuk mahasiswa ada di b
 1. `flutter pub get`
 2. `flutter run` (emulator/HP) atau `flutter run -d chrome`
 3. Tes realtime: buka di 2 device sekaligus, masuk ke room yang sama.
-
-Spesifikasi tiap fitur ada di folder `specs/`.
