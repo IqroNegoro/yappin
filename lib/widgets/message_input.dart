@@ -58,6 +58,8 @@ class _MessageInputState extends State<MessageInput> {
                 minLines: 1,
                 maxLines: 4,
                 textCapitalization: TextCapitalization.sentences,
+                // Enter = kirim (tanpa ini, field multi-baris memakai Enter untuk baris baru)
+                textInputAction: TextInputAction.send,
                 onSubmitted: (_) => _send(),
                 decoration: InputDecoration(
                   hintText: 'Tulis pesan…',
